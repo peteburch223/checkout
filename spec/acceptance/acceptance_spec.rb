@@ -1,16 +1,16 @@
 require 'checkout'
+require 'item'
 
 describe 'calculating expected price', feature: true do
+
+  let(:item1) { Item.new('001', 'Lavender heart', 9.25) }
+  let(:item2) { Item.new('002', 'Personalised cufflinks', 45.00) }
+  let(:item3) { Item.new('002', 'Kids T-shirt', 19.95) }
 
   ITEM001_UNIT_DISCOUNT = 0.75
   ITEM001_QTY_FOR_DISCOUNT = 2
   GLOBAL_DISCOUNT_THRESHOLD = 60
   GLOBAL_DISCOUNT_RATE = 0.1
-
-  Item = Struct.new(:product_code, :name, :price)
-  let(:item1) { Item.new('001', 'Lavender heart', 9.25) }
-  let(:item2) { Item.new('002', 'Personalised cufflinks', 45.00) }
-  let(:item3) { Item.new('002', 'Kids T-shirt', 19.95) }
 
   let(:global_rule1) {
     lambda do |total|

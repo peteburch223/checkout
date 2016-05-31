@@ -26,13 +26,13 @@ class Checkout
     subtotal - discount_for(subtotal, global_promotion_rules)
   end
 
-  def apply_item_promotion_to (basket)
+  def apply_item_promotion_to(basket)
     return basket.total if item_promotion_rules.nil?
     basket.total - discount_for(basket, item_promotion_rules)
   end
 
   def discount_for(object, rules)
-    discounts = rules.map { |rule| rule.call (object) }
+    discounts = rules.map { |rule| rule.call(object) }
     discounts.compact.reduce(0, :+)
   end
 end
