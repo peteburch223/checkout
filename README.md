@@ -1,10 +1,8 @@
 
 #### Pete BURCH
-peteburch223@gmail.com : 07474 791111
-
 ### Brief
 
-*-# Ruby Test
+## Ruby Test
 
 Our client is an online marketplace, here is a sample of some of the products available on our site:
 
